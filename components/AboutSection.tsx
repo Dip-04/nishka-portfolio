@@ -38,7 +38,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
             >
-              <p className="gold-line font-display text-3xl text-[#f5e3bd] md:text-4xl">
+              <p className="gold-line font-display text-3xl text-[#f4f7ff] md:text-4xl">
                 Professional Introduction
               </p>
               <p className="mt-8 text-sm leading-8 text-white/70 md:text-base">
@@ -55,7 +55,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
               >
-                <h3 className="font-display text-2xl text-[#f4e2bc]">Journey</h3>
+                <h3 className="font-display text-2xl text-[#f4f7ff]">Journey</h3>
                 <p className="mt-4 text-sm leading-7 text-white/68">
                   From technical drafting to immersive 3D storytelling, the journey has been about
                   translating vision into environments that are both beautiful and functional.
@@ -67,7 +67,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
               >
-                <h3 className="font-display text-2xl text-[#f4e2bc]">Philosophy</h3>
+                <h3 className="font-display text-2xl text-[#f4f7ff]">Philosophy</h3>
                 <p className="mt-4 text-sm leading-7 text-white/68">
                   Luxury is not excess. It is restraint, comfort, material honesty, and an unwavering
                   attention to how a space makes people feel.

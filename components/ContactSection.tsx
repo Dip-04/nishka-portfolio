@@ -13,8 +13,8 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
           >
-            <p className="mb-4 text-xs uppercase tracking-[0.55em] text-[#ddb97a]">Contact</p>
-            <h2 className="max-w-2xl font-display text-3xl text-[#f6e7c6] sm:text-4xl md:text-6xl">
+            <p className="mb-4 text-xs uppercase tracking-[0.55em] text-[#66f7ff]">Contact</p>
+            <h2 className="max-w-2xl font-display text-3xl text-[#f4f7ff] sm:text-4xl md:text-6xl">
               Let's design something extraordinary
             </h2>
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/68 md:text-base">
@@ -27,13 +27,13 @@ export default function ContactSection() {
                 href="https://wa.me/911234567890"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-[#25d366] px-5 py-3 text-sm font-semibold text-[#06120a] transition hover:scale-[1.02]"
+                className="rounded-full bg-gradient-to-r from-[#66f7ff] via-[#ff5bd6] to-[#f7c96e] px-5 py-3 text-sm font-semibold text-[#06111d] transition hover:scale-[1.02]"
               >
                 WhatsApp
               </a>
               <a
                 href="mailto:hello@interiordesignstudio.com"
-                className="rounded-full border border-[#ddb97a]/30 px-5 py-3 text-sm font-semibold text-white/90 transition hover:border-[#ddb97a]/60"
+                className="rounded-full border border-[#66f7ff]/30 px-5 py-3 text-sm font-semibold text-white/90 transition hover:border-[#66f7ff]/60"
               >
                 Email
               </a>
@@ -67,7 +67,7 @@ export default function ContactSection() {
               <label className="grid gap-2 text-sm text-white/70">
                 Name
                 <input
-                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 outline-none transition placeholder:text-white/30 focus:border-[#ddb97a]/60"
+                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 outline-none transition placeholder:text-white/30 focus:border-[#66f7ff]/60"
                   placeholder="Your name"
                 />
               </label>
@@ -75,7 +75,7 @@ export default function ContactSection() {
                 Email
                 <input
                   type="email"
-                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 outline-none transition placeholder:text-white/30 focus:border-[#ddb97a]/60"
+                  className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 outline-none transition placeholder:text-white/30 focus:border-[#66f7ff]/60"
                   placeholder="you@example.com"
                 />
               </label>
@@ -84,13 +84,13 @@ export default function ContactSection() {
               Project details
               <textarea
                 rows={6}
-                className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 outline-none transition placeholder:text-white/30 focus:border-[#ddb97a]/60"
+                className="rounded-2xl border border-white/10 bg-black/20 px-4 py-4 outline-none transition placeholder:text-white/30 focus:border-[#66f7ff]/60"
                 placeholder="Tell me about your space, goals, and timeline."
               />
             </label>
             <button
               type="submit"
-              className="mt-6 inline-flex rounded-full bg-[#f3d8a4] px-6 py-4 text-sm font-semibold text-[#17110d] transition hover:bg-[#ffe2ab]"
+              className="mt-6 inline-flex rounded-full bg-gradient-to-r from-[#66f7ff] via-[#ff5bd6] to-[#f7c96e] px-6 py-4 text-sm font-semibold text-[#06111d] transition hover:opacity-95"
             >
               Send Enquiry
             </button>

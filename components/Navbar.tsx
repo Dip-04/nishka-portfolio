@@ -23,8 +23,8 @@ export default function Navbar() {
     >
       <div className="glass mx-auto rounded-2xl px-4 py-4 md:rounded-full md:px-5">
         <div className="flex items-center justify-between">
-          <a href="#top" className="font-display text-base tracking-[0.28em] text-[#f8edd5] md:text-lg md:tracking-[0.35em]">
-          NISHKA
+          <a href="#top" className="font-display text-base tracking-[0.28em] text-[#f4f7ff] md:text-lg md:tracking-[0.35em]">
+            NISHKA
           </a>
           <button
             type="button"
@@ -33,11 +33,11 @@ export default function Navbar() {
             aria-label="Toggle navigation"
             aria-expanded={open}
           >
-            <span className="text-xl leading-none">{open ? '×' : '☰'}</span>
+            <span className="text-[10px] uppercase tracking-[0.3em]">{open ? 'Close' : 'Menu'}</span>
           </button>
           <nav className="hidden items-center gap-7 text-xs uppercase tracking-[0.35em] text-white/65 md:flex">
             {navItems.map(([label, href]) => (
-              <a key={href} href={href} className="transition hover:text-[#f2d9a0]">
+              <a key={href} href={href} className="transition hover:text-[#66f7ff]">
                 {label}
               </a>
             ))}
@@ -53,7 +53,7 @@ export default function Navbar() {
               <a
                 key={href}
                 href={href}
-                className="rounded-xl px-3 py-3 transition hover:bg-white/5 hover:text-[#f2d9a0]"
+                className="rounded-xl px-3 py-3 transition hover:bg-white/5 hover:text-[#66f7ff]"
                 onClick={() => setOpen(false)}
               >
                 {label}

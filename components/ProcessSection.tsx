@@ -24,8 +24,8 @@ export default function ProcessSection() {
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
             >
-              <div className="mb-6 text-xs uppercase tracking-[0.45em] text-[#ddb97a]">0{index + 1}</div>
-              <h3 className="font-display text-2xl text-[#f6e7c6]">{step}</h3>
+              <div className="mb-6 text-xs uppercase tracking-[0.45em] text-[#ff5bd6]">0{index + 1}</div>
+              <h3 className="font-display text-2xl text-[#f4f7ff]">{step}</h3>
             </motion.div>
           ))}
         </div>

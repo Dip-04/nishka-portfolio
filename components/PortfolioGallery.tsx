@@ -49,13 +49,19 @@ function GalleryScene() {
       <Float speed={1.4} rotationIntensity={0.25} floatIntensity={0.35}>
         <mesh position={[-3.9, 1.3, 0]} rotation={[0, 0.2, 0.2]}>
           <boxGeometry args={[1.2, 2.2, 0.2]} />
-          <meshStandardMaterial color="#8a6b41" roughness={0.5} />
+          <meshStandardMaterial color="#66f7ff" roughness={0.35} emissive="#66f7ff" emissiveIntensity={0.3} />
         </mesh>
       </Float>
       <Float speed={1.8} rotationIntensity={0.35} floatIntensity={0.4}>
         <mesh position={[3.7, 1.6, -0.6]} rotation={[0.2, -0.3, -0.18]}>
           <cylinderGeometry args={[0.35, 0.6, 2.8, 16]} />
-          <meshStandardMaterial color="#2f2925" roughness={0.75} />
+          <meshStandardMaterial color="#ff5bd6" roughness={0.75} emissive="#ff5bd6" emissiveIntensity={0.22} />
+        </mesh>
+      </Float>
+      <Float speed={1.2} rotationIntensity={0.5} floatIntensity={0.55}>
+        <mesh position={[0, 2.2, -1.4]} rotation={[0.1, 0.35, 0.1]}>
+          <torusGeometry args={[0.85, 0.08, 16, 60]} />
+          <meshStandardMaterial color="#f7c96e" emissive="#f7c96e" emissiveIntensity={0.3} />
         </mesh>
       </Float>
 
@@ -63,21 +69,22 @@ function GalleryScene() {
         <Html
           key={card.title}
           transform
-          position={[-2.8 + index * 2.9, 0.5 + index * 0.15, 0]}
+          position={[-3.0 + index * 3.0, 0.55 + index * 0.15, -index * 0.7]}
+          rotation={[0, index === 1 ? 0 : index === 0 ? 0.18 : -0.18, 0]}
           distanceFactor={1.4}
           className="!pointer-events-auto"
         >
           <motion.div
-            whileHover={{ y: -10, rotate: -1 }}
+            whileHover={{ y: -14, rotate: index % 2 === 0 ? -2 : 2, scale: 1.04 }}
             transition={{ duration: 0.35 }}
-            className="glass w-[14rem] overflow-hidden rounded-[1.5rem] border border-white/10"
+            className="glass neon-border w-[14rem] overflow-hidden rounded-[1.5rem] border border-white/10"
           >
             <div className="h-48 overflow-hidden">
               <img src={card.image} alt={card.title} className="h-full w-full object-cover" />
             </div>
             <div className="p-4">
-              <p className="text-[10px] uppercase tracking-[0.45em] text-[#ddb97a]">{card.label}</p>
-              <h3 className="mt-3 font-display text-2xl text-[#f6e8cb]">{card.title}</h3>
+              <p className="text-[10px] uppercase tracking-[0.45em] text-[#66f7ff]">{card.label}</p>
+              <h3 className="mt-3 font-display text-2xl text-[#f4f7ff]">{card.title}</h3>
             </div>
           </motion.div>
         </Html>
@@ -92,10 +99,10 @@ export default function PortfolioGallery() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.55em] text-[#ddb97a]">
+            <p className="mb-4 text-xs uppercase tracking-[0.55em] text-[#ff5bd6]">
               3D Interactive Gallery
             </p>
-            <h2 className="max-w-3xl font-display text-3xl leading-[0.95] text-[#f6e7c6] sm:text-4xl md:text-6xl">
+            <h2 className="max-w-3xl font-display text-3xl leading-[0.95] text-[#f4f7ff] sm:text-4xl md:text-6xl">
               Floating project cards shaped by scroll-driven depth
             </h2>
           </div>
@@ -106,7 +113,7 @@ export default function PortfolioGallery() {
         </div>
 
         <motion.div
-          className="glass mt-10 overflow-hidden rounded-[1.5rem] min-h-[28rem] sm:min-h-[34rem] md:h-[42rem] md:rounded-[2rem]"
+          className="glass neon-border mt-10 overflow-hidden rounded-[1.5rem] min-h-[28rem] sm:min-h-[34rem] md:h-[42rem] md:rounded-[2rem]"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
@@ -119,8 +126,8 @@ export default function PortfolioGallery() {
                     <img src={card.image} alt={card.title} className="h-full w-full object-cover" />
                   </div>
                   <div className="p-4">
-                    <p className="text-[10px] uppercase tracking-[0.45em] text-[#ddb97a]">{card.label}</p>
-                    <h3 className="mt-3 font-display text-2xl text-[#f6e8cb]">{card.title}</h3>
+                    <p className="text-[10px] uppercase tracking-[0.45em] text-[#66f7ff]">{card.label}</p>
+                    <h3 className="mt-3 font-display text-2xl text-[#f4f7ff]">{card.title}</h3>
                   </div>
                 </article>
               ))}
@@ -131,12 +138,13 @@ export default function PortfolioGallery() {
           </div>
           <div className="hidden h-full md:block">
             <Canvas dpr={[1, 1.5]}>
-            <PerspectiveCamera makeDefault position={[0, 0, 8.5]} fov={38} />
-            <ambientLight intensity={0.8} />
-            <directionalLight position={[4, 6, 6]} intensity={2.2} color="#ffe1a8" />
-            <ScrollControls pages={3.2} damping={0.2}>
-              <GalleryScene />
-            </ScrollControls>
+              <PerspectiveCamera makeDefault position={[0, 0, 8.5]} fov={38} />
+              <ambientLight intensity={0.8} color="#9bb7ff" />
+              <directionalLight position={[4, 6, 6]} intensity={2.2} color="#66f7ff" />
+              <pointLight position={[-4, 0, 5]} intensity={1.6} color="#ff5bd6" />
+              <ScrollControls pages={3.2} damping={0.2}>
+                <GalleryScene />
+              </ScrollControls>
             </Canvas>
           </div>
         </motion.div>

@@ -28,8 +28,8 @@ export default function TestimonialsSection() {
                 "{testimonial.quote}"
               </blockquote>
               <figcaption className="mt-8">
-                <div className="font-display text-2xl text-[#f6e7c6]">{testimonial.name}</div>
-                <div className="mt-2 text-xs uppercase tracking-[0.35em] text-[#ddb97a]">
+                <div className="font-display text-2xl text-[#f4f7ff]">{testimonial.name}</div>
+                <div className="mt-2 text-xs uppercase tracking-[0.35em] text-[#66f7ff]">
                   {testimonial.role}
                 </div>
               </figcaption>
