@@ -76,7 +76,7 @@ export default function ProjectsSection() {
                     </div>
                   </div>
 
-                  <div className="grid gap-4 sm:grid-cols-3">
+                  <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
                     {project.gallery.map((image) => (
                       <div key={image} className="overflow-hidden rounded-[1.2rem]">
                         <Image
@@ -84,7 +84,7 @@ export default function ProjectsSection() {
                           alt={`${project.title} gallery`}
                           width={1200}
                           height={900}
-                          className="h-36 w-full object-cover transition duration-500 hover:scale-105"
+                          className="h-40 w-full object-cover transition duration-500 hover:scale-105 sm:h-36"
                         />
                       </div>
                     ))}

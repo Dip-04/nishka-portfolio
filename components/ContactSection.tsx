@@ -14,7 +14,7 @@ export default function ContactSection() {
             viewport={{ once: true, amount: 0.25 }}
           >
             <p className="mb-4 text-xs uppercase tracking-[0.55em] text-[#ddb97a]">Contact</p>
-            <h2 className="font-display text-4xl text-[#f6e7c6] md:text-6xl">
+            <h2 className="max-w-2xl font-display text-3xl text-[#f6e7c6] sm:text-4xl md:text-6xl">
               Let's design something extraordinary
             </h2>
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/68 md:text-base">

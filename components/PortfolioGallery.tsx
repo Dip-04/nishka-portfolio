@@ -95,7 +95,7 @@ export default function PortfolioGallery() {
             <p className="mb-4 text-xs uppercase tracking-[0.55em] text-[#ddb97a]">
               3D Interactive Gallery
             </p>
-            <h2 className="font-display text-4xl leading-none text-[#f6e7c6] md:text-6xl">
+            <h2 className="max-w-3xl font-display text-3xl leading-[0.95] text-[#f6e7c6] sm:text-4xl md:text-6xl">
               Floating project cards shaped by scroll-driven depth
             </h2>
           </div>
@@ -106,19 +106,39 @@ export default function PortfolioGallery() {
         </div>
 
         <motion.div
-          className="glass mt-10 h-[42rem] overflow-hidden rounded-[2rem]"
+          className="glass mt-10 overflow-hidden rounded-[1.5rem] min-h-[28rem] sm:min-h-[34rem] md:h-[42rem] md:rounded-[2rem]"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
         >
-          <Canvas dpr={[1, 1.5]}>
+          <div className="grid h-full md:hidden">
+            <div className="grid gap-4 p-4 sm:grid-cols-2">
+              {cards.map((card) => (
+                <article key={card.title} className="glass overflow-hidden rounded-[1.4rem]">
+                  <div className="h-44 overflow-hidden">
+                    <img src={card.image} alt={card.title} className="h-full w-full object-cover" />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-[10px] uppercase tracking-[0.45em] text-[#ddb97a]">{card.label}</p>
+                    <h3 className="mt-3 font-display text-2xl text-[#f6e8cb]">{card.title}</h3>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="px-4 pb-4 text-sm leading-7 text-white/66">
+              Scroll animations and 3D depth are enabled on larger screens for a smoother mobile experience.
+            </div>
+          </div>
+          <div className="hidden h-full md:block">
+            <Canvas dpr={[1, 1.5]}>
             <PerspectiveCamera makeDefault position={[0, 0, 8.5]} fov={38} />
             <ambientLight intensity={0.8} />
             <directionalLight position={[4, 6, 6]} intensity={2.2} color="#ffe1a8" />
             <ScrollControls pages={3.2} damping={0.2}>
               <GalleryScene />
             </ScrollControls>
-          </Canvas>
+            </Canvas>
+          </div>
         </motion.div>
       </div>
     </section>
