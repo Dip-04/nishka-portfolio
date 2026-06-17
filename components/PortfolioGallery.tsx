@@ -2,6 +2,7 @@
 
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Html, PerspectiveCamera, ScrollControls, useScroll } from '@react-three/drei';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import * as THREE from 'three';
@@ -10,17 +11,20 @@ const cards = [
   {
     title: 'Editorial Suite',
     label: 'Curation / Styling',
-    image: 'https://picsum.photos/seed/gallery-suite/900/1200'
+    image: 'https://images.unsplash.com/photo-1531860995303-e732ee6bdb1f?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200',
+    alt: 'Podcast studio interior with microphone and editing setup'
   },
   {
     title: 'Executive Lounge',
     label: 'Commercial / Premium',
-    image: 'https://picsum.photos/seed/gallery-lounge/900/1200'
+    image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200',
+    alt: 'Corporate reception interior with premium finishes'
   },
   {
     title: 'Residential Calm',
     label: 'Home / Serenity',
-    image: 'https://picsum.photos/seed/gallery-home/900/1200'
+    image: 'https://images.unsplash.com/photo-1603111691889-364c9fc6d066?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200',
+    alt: 'Luxury bungalow interior with staircase and warm living space'
   }
 ];
 
@@ -80,7 +84,13 @@ function GalleryScene() {
             className="glass neon-border w-[14rem] overflow-hidden rounded-[1.5rem] border border-white/10"
           >
             <div className="h-48 overflow-hidden">
-              <img src={card.image} alt={card.title} className="h-full w-full object-cover" />
+              <Image
+                src={card.image}
+                alt={card.alt}
+                width={900}
+                height={1200}
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="p-4">
               <p className="text-[10px] uppercase tracking-[0.45em] text-[#66f7ff]">{card.label}</p>
@@ -123,7 +133,13 @@ export default function PortfolioGallery() {
               {cards.map((card) => (
                 <article key={card.title} className="glass overflow-hidden rounded-[1.4rem]">
                   <div className="h-44 overflow-hidden">
-                    <img src={card.image} alt={card.title} className="h-full w-full object-cover" />
+                    <Image
+                      src={card.image}
+                      alt={card.alt}
+                      width={900}
+                      height={1200}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="p-4">
                     <p className="text-[10px] uppercase tracking-[0.45em] text-[#66f7ff]">{card.label}</p>

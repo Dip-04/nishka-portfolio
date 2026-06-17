@@ -63,6 +63,18 @@ export default function ProjectsSection() {
                     <p className="mt-4 text-sm leading-7 text-white/70">{project.solution}</p>
                   </div>
 
+                  <div className="mt-5 overflow-hidden rounded-[1.6rem] border border-white/10 bg-white/5">
+                    <motion.div whileHover={{ scale: 1.03, rotate: 0.3 }} transition={{ duration: 0.35 }}>
+                      <Image
+                        src={project.heroImage.src}
+                        alt={project.heroImage.alt}
+                        width={1400}
+                        height={1000}
+                        className="h-60 w-full object-cover"
+                      />
+                    </motion.div>
+                  </div>
+
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
@@ -74,18 +86,18 @@ export default function ProjectsSection() {
 
                 <div className="grid gap-4 p-6 md:p-8">
                   <BeforeAfterSlider
-                    before={project.beforeImage}
-                    after={project.afterImage}
-                    altBefore={`${project.title} before`}
-                    altAfter={`${project.title} after`}
+                    before={project.beforeImage.src}
+                    after={project.afterImage.src}
+                    altBefore={project.beforeImage.alt}
+                    altAfter={project.afterImage.alt}
                   />
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                     {project.gallery.map((image) => (
-                      <div key={image} className="overflow-hidden rounded-[1.2rem]">
+                      <div key={image.src} className="overflow-hidden rounded-[1.2rem]">
                         <Image
-                          src={image}
-                          alt={`${project.title} gallery`}
+                          src={image.src}
+                          alt={image.alt}
                           width={1200}
                           height={900}
                           className="h-40 w-full object-cover transition duration-500 hover:scale-105 sm:h-36"

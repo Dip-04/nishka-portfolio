@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 
 export default function BeforeAfterSlider({
@@ -19,9 +20,9 @@ export default function BeforeAfterSlider({
   return (
     <div className="glass neon-border relative overflow-hidden rounded-[1.5rem]">
       <div className="relative aspect-[4/3] w-full overflow-hidden">
-        <img src={after} alt={altAfter} className="absolute inset-0 h-full w-full object-cover" />
+        <Image src={after} alt={altAfter} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
         <div style={clipStyle} className="absolute inset-0">
-          <img src={before} alt={altBefore} className="h-full w-full object-cover" />
+          <Image src={before} alt={altBefore} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
         </div>
 
         <div

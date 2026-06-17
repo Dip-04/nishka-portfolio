@@ -2,24 +2,14 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-
-type Project = {
-  title: string;
-  type: string;
-  concept: string;
-  challenge: string;
-  solution: string;
-  beforeImage: string;
-  afterImage: string;
-  gallery: string[];
-};
+import type { FeaturedProject } from '@/lib/content';
 
 export default function ProjectModal({
   project,
   open,
   onClose
 }: {
-  project: Project | null;
+  project: FeaturedProject | null;
   open: boolean;
   onClose: () => void;
 }) {
@@ -59,8 +49,15 @@ export default function ProjectModal({
               </div>
               <div className="grid gap-4 p-5 md:p-8">
                 <Image
-                  src={project.afterImage}
-                  alt={project.title}
+                  src={project.heroImage.src}
+                  alt={project.heroImage.alt}
+                  width={1400}
+                  height={1000}
+                  className="h-64 w-full rounded-[1.35rem] object-cover md:h-80"
+                />
+                <Image
+                  src={project.afterImage.src}
+                  alt={project.afterImage.alt}
                   width={1400}
                   height={1000}
                   className="h-72 w-full rounded-[1.35rem] object-cover md:h-[26rem]"
@@ -68,9 +65,9 @@ export default function ProjectModal({
                 <div className="grid grid-cols-3 gap-3">
                   {project.gallery.map((image) => (
                     <Image
-                      key={image}
-                      src={image}
-                      alt={`${project.title} gallery`}
+                      key={image.src}
+                      src={image.src}
+                      alt={image.alt}
                       width={1200}
                       height={900}
                       className="h-28 w-full rounded-[1rem] object-cover md:h-36"

@@ -23,8 +23,8 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <Image
-              src="https://picsum.photos/seed/about-interior/1200/1200"
-              alt="Elegant interior detail"
+              src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1600"
+              alt="Elegant modern interior detail with premium office-inspired materials"
               width={1200}
               height={1200}
               className="h-full w-full object-cover"
